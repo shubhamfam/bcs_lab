@@ -17,15 +17,14 @@ int indexOf(char *str, char ch)
 int main()
 {
     char *str, ch;
-
-    printf("Enter a string: ");
-    scanf("%s", str);
+    printf("Enter a string: \n");
+    scanf("%s\n", str);
     printf("Enter a character: ");
     scanf("%c", &ch);
 
     int position = indexOf(str, ch);
 
-    position != 1 ? printf("%c found in %s at position %d", ch, str, position) : printf("%c not found in %s", ch, str);
+    position != -1 ? printf("%c found in %s at position %d\n", ch, str, position) : printf("%c not found in %s\n", ch, str);
 
     return 0;
 }

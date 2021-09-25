@@ -16,7 +16,7 @@ int main()
 {
     int a, b;
 
-    printf("Enter teo numbers to find gcd: \n");
+    printf("Enter two numbers to find gcd: \n");
     scanf("%d%d", &a, &b);
 
     printf("GCD(%d, %d) = %d\n", a, b, gcd(a, b));
