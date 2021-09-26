@@ -4,15 +4,7 @@ the function to count the total number of alphabets, digits and special symbols 
 #include <stdio.h>
 #include <ctype.h>
 
-int charType(char ch)
-{
-    if (isalpha(ch))
-        return 1;
-    else if (isdigit(ch))
-        return 2;
-    else if (ispunct(ch))
-        return 3;
-}
+int charType(char);
 
 int main()
 {
@@ -32,4 +24,14 @@ int main()
     printf("\nAlphabets Count: %d, Digits Count: %d, Special Symbols Count: %d\n", alphaCount, digitCount, symbolCount);
 
     return 0;
+}
+
+int charType(char ch)
+{
+    if (isalpha(ch))
+        return 1;
+    else if (isdigit(ch))
+        return 2;
+    else if (ispunct(ch))
+        return 3;
 }

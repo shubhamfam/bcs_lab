@@ -2,13 +2,7 @@
 number. Example: 961 -> 16 -> 5. (Note: Do not use a loop)*/
 #include <stdio.h>
 
-int singularSumOfDigits(int num)
-{
-    if (num < 10)
-        return num;
-    else
-        return singularSumOfDigits(singularSumOfDigits((num % 10) + singularSumOfDigits(num / 10)));
-}
+int singularSumOfDigits(int);
 
 int main()
 {
@@ -19,4 +13,12 @@ int main()
 
     printf("Sum of digits of %d = %d\n", num, singularSumOfDigits(num));
     return 0;
+}
+
+int singularSumOfDigits(int num)
+{
+    if (num < 10)
+        return num;
+    else
+        return singularSumOfDigits(singularSumOfDigits((num % 10) + singularSumOfDigits(num / 10)));
 }

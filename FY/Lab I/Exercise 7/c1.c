@@ -1,25 +1,46 @@
 /*1. Write a menu driven program to perform the following operations using the Taylor series.
 Accept suitable data for each option. Write separate functions for each option.*/
 #include <stdio.h>
-float power(float x, int y)
-{
-    float pow = 1;
+#include "../util.h"
 
-    for (int i = 1; i <= y; i++)
-    {
-        pow *= x;
-    }
-    return pow;
-}
+float sine(float, int);
+float cosine(float, int);
+float exponential(float, int);
 
-int factorial(int n)
+int main()
 {
-    int fact = 1;
-    for (int i = n; i > 1; --i)
+    int o, num;
+    float x;
+
+    printf("Operations using taylor series\n");
+    printf("1. e^x 2.sin(x) 3.cos(x)");
+    scanf("%d", &o);
+
+    switch (o)
     {
-        fact *= i;
+    case 1:
+        printf("Enter x (e^x): ");
+        scanf("%f", &x);
+        printf("Enter number of temrs: ");
+        scanf("%d", &num);
+
+        printf("e^%f = %f", x, exponential(x, num));
+        break;
+    case 2:
+        printf("Enter x (sin(x): ");
+        scanf("%f", &x);
+        printf("Enter number of temrs: ");
+        scanf("%d", &num);
+        printf("sin(%f) = %f", x, sine(x, num));
+        break;
+    case 3:
+        printf("Enter x (cos(x): ");
+        scanf("%f", &x);
+        printf("Enter number of temrs: ");
+        scanf("%d", &num);
+        printf("cos(%f) = %f", x, cosine(x, num));
+        break;
     }
-    return fact;
 }
 
 float sine(float x, int num)
@@ -56,40 +77,4 @@ float exponential(float x, int num)
         sum += power(x, i) / factorial(i);
     }
     return sum;
-}
-
-int main()
-{
-    int o, num;
-    float x;
-
-    printf("Operations using taylor series\n");
-    printf("1. e^x 2.sin(x) 3.cos(x)");
-    scanf("%d", &o);
-
-    switch (o)
-    {
-    case 1:
-        printf("Enter x (e^x): ");
-        scanf("%f", &x);
-        printf("Enter number of temrs: ");
-        scanf("%d", &num);
-
-        printf("e^%f = %f", x, exponential(x, num));
-        break;
-    case 2:
-        printf("Enter x (sin(x): ");
-        scanf("%f", &x);
-        printf("Enter number of temrs: ");
-        scanf("%d", &num);
-        printf("sin(%f) = %f", x, sine(x, num));
-        break;
-    case 3:
-        printf("Enter x (cos(x): ");
-        scanf("%f", &x);
-        printf("Enter number of temrs: ");
-        scanf("%d", &num);
-        printf("cos(%f) = %f", x, cosine(x, num));
-        break;
-    }
 }

@@ -5,13 +5,7 @@ an = 3                    if n = 1 or 2
 */
 #include <stdio.h>
 
-int a_nseries(int n)
-{
-    if (n == 1 || n == 2)
-        return 3;
-    else if (n > 2)
-        return 2 * a_nseries(n - 1) + 3 * a_nseries(n - 2);
-}
+int a_nseries(int);
 
 int main()
 {
@@ -23,4 +17,12 @@ int main()
     }
 
     return 0;
+}
+
+int a_nseries(int n)
+{
+    if (n == 1 || n == 2)
+        return 3;
+    else if (n > 2)
+        return 2 * a_nseries(n - 1) + 3 * a_nseries(n - 2);
 }

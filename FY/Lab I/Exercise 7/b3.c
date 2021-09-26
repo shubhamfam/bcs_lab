@@ -1,26 +1,9 @@
 /*3. Write a function power, which calculates x . Write another function, which calculates n! Using
 for loop. Use these functions to calculate the sum of first n terms of the Taylor series:*/
 #include <stdio.h>
-float power(float x, int y)
-{
-    float pow = 1;
 
-    for (int i = 1; i <= y; i++)
-    {
-        pow *= x;
-    }
-    return pow;
-}
-
-int factorial(int n)
-{
-    int fact = 1;
-    for (int i = n; i > 1; --i)
-    {
-        fact *= i;
-    }
-    return fact;
-}
+float power(float, int);
+int factorial(int);
 
 int main()
 {
@@ -41,6 +24,27 @@ int main()
             sum += power(x, i) / factorial(i);
     }
 
-    printf("sum of first n terms of the Taylor series = %f\n",sum);
+    printf("sum of first n terms of the Taylor series = %f\n", sum);
     return 0;
+}
+
+float power(float x, int y)
+{
+    float pow = 1;
+
+    for (int i = 1; i <= y; i++)
+    {
+        pow *= x;
+    }
+    return pow;
+}
+
+int factorial(int n)
+{
+    int fact = 1;
+    for (int i = n; i > 1; --i)
+    {
+        fact *= i;
+    }
+    return fact;
 }

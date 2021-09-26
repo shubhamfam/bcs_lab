@@ -5,13 +5,7 @@ fib(n) = 1                   if n = 1 or 2
        = fib(n-2) + fib(n-1) if n>2*/
 #include <stdio.h>
 
-int fib(int n)
-{
-    if (n == 1 || n == 2)
-        return 1;
-    else
-        return fib(n - 2) + fib(n - 1);
-}
+int fib(int);
 
 int main()
 {
@@ -23,4 +17,12 @@ int main()
         printf("%d\t", fib(i));
 
     return 0;
+}
+
+int fib(int n)
+{
+    if (n == 1 || n == 2)
+        return 1;
+    else
+        return fib(n - 2) + fib(n - 1);
 }

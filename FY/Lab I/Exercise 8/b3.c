@@ -6,16 +6,7 @@ Example 3456
                          = print n % 10 + tab + Recursiveprint( n/10)*/
 #include <stdio.h>
 
-void reverse(int num)
-{
-    if (num < 10)
-        printf("%d\t", num);
-    else
-    {
-        printf("%d\t", (num % 10));
-        reverse(num / 10);
-    }
-}
+void printReverse(int);
 
 int main()
 {
@@ -23,7 +14,18 @@ int main()
     printf("Enter a number to reverse: \n");
     scanf("%d", &num);
 
-    reverse(num);
+    printReverse(num);
 
     return 0;
+}
+
+void printReverse(int num)
+{
+    if (num < 10)
+        printf("%d\t", num);
+    else
+    {
+        printf("%d\t", (num % 10));
+        printReverse(num / 10);
+    }
 }

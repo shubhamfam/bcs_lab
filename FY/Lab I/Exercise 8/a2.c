@@ -4,13 +4,7 @@ gcd(a,b) = a if b = 0
          = gcd (b, a mod b) otherwise*/
 #include <stdio.h>
 
-int gcd(int a, int b)
-{
-    if (b == 0)
-        return a;
-    else
-        return gcd(b, a % b);
-}
+int gcd(int, int);
 
 int main()
 {
@@ -22,4 +16,12 @@ int main()
     printf("GCD(%d, %d) = %d\n", a, b, gcd(a, b));
 
     return 0;
+}
+
+int gcd(int a, int b)
+{
+    if (b == 0)
+        return a;
+    else
+        return gcd(b, a % b);
 }
