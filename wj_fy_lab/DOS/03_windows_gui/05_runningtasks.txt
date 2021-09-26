@@ -1,0 +1,7 @@
+Chrome
+Edge
+Paint
+Task Manager
+VS code
+Windows Explorer
+Windows Terminal

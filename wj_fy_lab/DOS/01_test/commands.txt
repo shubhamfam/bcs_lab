@@ -1,0 +1,170 @@
+/*SET A - 1*/
+
+    /* 1 */
+
+    >copy con name_address.txt
+    W Joshi
+    ratnagiri, india
+    ^Z
+            1 file(s) copied.
+
+    >type name_address.txt
+    W Joshi
+    ratnagiri, india
+
+    /* 2 */ 
+
+    >ren name_address.txt self.txt
+
+    >dir *.txt
+    Directory of C:\DOS\01_test\testfiles
+
+    09/19/2021  11:00 AM                27 self.txt
+    09/19/2021  10:53 AM                21 test.txt
+                2 File(s)             48 bytes
+                0 Dir(s)  270,251,909,120 bytes free
+
+    /* 3 */
+
+    >copy self.txt bio.txt
+            1 file(s) copied.
+
+    >dir *.txt
+
+    Directory of C:\DOS\01_test\testfiles
+
+    09/19/2021  11:00 AM                27 bio.txt
+    09/19/2021  11:00 AM                27 self.txt
+    09/19/2021  10:53 AM                21 test.txt
+                3 File(s)             75 bytes
+                0 Dir(s)  270,251,450,368 bytes free
+
+    /* 4 */
+
+    >type self.txt
+    W Joshi
+    ratnagiri, india
+
+    /* 5 */
+
+    >attrib +h bio.txt
+
+    >dir *.txt
+
+    Directory of C:\DOS\01_test\testfiles
+
+    09/19/2021  11:00 AM                27 self.txt
+    09/19/2021  10:53 AM                21 test.txt
+                2 File(s)             48 bytes
+                0 Dir(s)  270,250,438,656 bytes free
+
+/*SET A - 2*/
+
+    /* 1 */
+
+    >copy con a.txt
+    Modern College
+    Progressive Education Society
+    Shivajinagar, Pune^Z
+            1 file(s) copied.
+
+    /* 2 */
+    >ren a.txt college.txt
+
+    /* 3 */
+
+    >copy college.txt course.txt
+            1 file(s) copied.
+
+    /* 4 */
+    >type course.txt
+    Modern College
+    Progressive Education Society
+    Shivajinagar, Pune
+
+    /* 5 */
+    >attrib +r course.txt
+
+/*SET A - 3*/
+
+    /* 1 */
+
+    >dir *.txt
+
+    Directory of C:\DOS\01_test\testfiles
+
+    09/19/2021  11:11 AM                65 college.txt
+    09/19/2021  11:11 AM                65 course.txt
+    09/19/2021  11:00 AM                27 self.txt
+    09/19/2021  10:53 AM                21 test.txt
+                4 File(s)            178 bytes
+                0 Dir(s)  270,252,552,192 bytes free
+
+    /* 2 */
+
+    >ren *.txt *.doc
+
+    >dir
+
+    Directory of C:\DOS\01_test\testfiles
+
+    09/19/2021  11:17 AM    <DIR>          .
+    09/19/2021  11:17 AM    <DIR>          ..
+    09/19/2021  11:11 AM                65 college.doc
+    09/19/2021  11:11 AM                65 course.doc
+    09/19/2021  11:00 AM                27 self.doc
+    09/19/2021  10:53 AM                21 test.doc
+                4 File(s)            178 bytes
+                2 Dir(s)  270,259,113,984 bytes free
+
+    /* 3 */ 
+
+    >del 1*.txt
+
+    /* 4 */
+
+    >chkdsk /f /v
+
+    /* 5 */
+
+    >path C:\DOS
+
+/*SET A - 4*/
+
+    /* 1 */
+
+    >copy con a.txt
+    AB Chawla
+    BC Damle
+    CD Edwards
+    DE Ferguson
+    EF Good^Z
+            1 file(s) copied.
+
+    /* 2 */
+
+    >ren a.txt b.txt
+
+    /* 3 */
+
+    >copy b.txt copy.txt
+            1 file(s) copied.
+
+    /* 4 */
+
+    >type copy.txt
+    AB Chawla
+    BC Damle
+    CD Edwards
+    DE Ferguson
+    EF Good
+
+    /* 5 */
+
+    >attrib +h copy.txt
+
+    /* 6 */
+
+    >path
+    PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Users\walla\AppData\Local\Microsoft\WindowsApps;C:\Users\walla\AppData\Local\Programs\Microsoft VS Code\bin;C:\server_ap2_psql_php\pgsql\bin
+
