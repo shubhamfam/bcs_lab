@@ -2,7 +2,22 @@
 occurrence of each number.*/
 #include <stdio.h>
 #include "array_utils.h"
-#define MAX 20
+
+void countFrequency(int *, int);
+
+int main()
+{
+    int n;
+    printf("How many numbers: ");
+    scanf("%d", &n);
+    int arr[n];
+
+    accept(arr, n);
+    display(arr, n);
+    countFrequency(arr, n);
+
+    return 0;
+}
 
 void countFrequency(int *arr, int n)
 {
@@ -26,18 +41,4 @@ void countFrequency(int *arr, int n)
 
         printf("\nfrequency of occurrence of %d: %d times", arr[i], count);
     }
-}
-
-int main()
-{
-    int n;
-    printf("How many numbers: ");
-    scanf("%d", &n);
-    int arr[n];
-
-    accept(arr, n);
-    display(arr, n);
-    countFrequency(arr, n);
-
-    return 0;
 }

@@ -5,15 +5,7 @@ this function. Display appropriate messages.*/
 #include <stdio.h>
 #include "array_utils.h"
 
-int linearSearch(int *arr, int n, int key)
-{
-    for (int i = 0; i < n; i++)
-    {
-        if (arr[i] == key)
-            return i;
-    }
-    return -1;
-}
+int linearSearch(int *, int , int);
 
 int main()
 {
@@ -36,4 +28,14 @@ int main()
         printf("key found at index: %d\n", position);
 
     return 0;
+}
+
+int linearSearch(int *arr, int n, int key)
+{
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] == key)
+            return i;
+    }
+    return -1;
 }

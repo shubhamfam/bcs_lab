@@ -2,22 +2,7 @@
 from the user, store them in an array and sort them using this function. Display the sorted array.*/
 #include <stdio.h>
 #include "array_utils.h"
-
-void bubbleSort(int *arr, int n)
-{
-    for (int i = 0; i < n - 1; i++)
-    {
-        for (int j = 0; j < n - i - 1; j++)
-        {
-            if (arr[j] > arr[j + 1])
-            {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-}
+void bubbleSort(int *, int);
 
 int main()
 {
@@ -34,4 +19,20 @@ int main()
 
     printf("Sorted Array: \n");
     display(arr, n);
+}
+
+void bubbleSort(int *arr, int n)
+{
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
 }

@@ -2,6 +2,48 @@
 Write separate functions.*/
 #include <stdio.h>
 #include <stdlib.h>
+
+int decimalToBinary(int *, int);
+int decimalToOctal(int *, int);
+int decimalToHex(int *, int);
+void reverseDisplay(int *, int);
+
+int main()
+{
+    int num, *hex, *binary, *octal, size = 0, o;
+
+    printf("Enter a decimal number: \n");
+    scanf("%d", &num);
+
+    do
+    {
+        printf("\n1.Binary\t2.Octal\t3.Hexadecimal");
+        scanf("%d", &o);
+        switch (o)
+        {
+        case 1:
+            printf("Binary of the decimal %d = ", num);
+            binary = (int *)malloc(sizeof(int));
+            size = decimalToBinary(binary, num);
+            reverseDisplay(binary, size);
+            break;
+        case 2:
+            printf("Octal of the decimal %d = ", num);
+            octal = (int *)malloc(sizeof(int));
+            size = decimalToOctal(octal, num);
+            reverseDisplay(octal, size);
+            break;
+        case 3:
+            printf("Hexadecimal of the decimal %d = ", num);
+            hex = (int *)malloc(sizeof(int));
+            size = decimalToHex(hex, num);
+            break;
+        }
+    } while (o != 0);
+
+    return 0;
+}
+
 int decimalToBinary(int *bin, int num)
 {
     int i;
@@ -40,46 +82,11 @@ int decimalToHex(int *hex, int num)
         printf("%c", hex[i]);
     return k;
 }
+
 void reverseDisplay(int *arr, int size)
 {
     for (int i = size - 1; i >= 0; --i)
     {
         printf("%d", arr[i]);
     }
-}
-
-int main()
-{
-    int num, *hex, *binary, *octal, size = 0, o;
-
-    printf("Enter a decimal number: \n");
-    scanf("%d", &num);
-
-    do
-    {
-        printf("\n1.Binary\t2.Octal\t3.Hexadecimal");
-        scanf("%d", &o);
-        switch (o)
-        {
-        case 1:
-            printf("Binary of the decimal %d = ", num);
-            binary = (int *)malloc(sizeof(int));
-            size = decimalToBinary(binary, num);
-            reverseDisplay(binary, size);
-            break;
-        case 2:
-            printf("Octal of the decimal %d = ", num);
-            octal = (int *)malloc(sizeof(int));
-            size = decimalToOctal(octal, num);
-            reverseDisplay(octal, size);
-            break;
-        case 3:
-            printf("Hexadecimal of the decimal %d = ", num);
-            hex = (int *)malloc(sizeof(int));
-            size = decimalToHex(hex, num);
-            break;
-        }
-    } while (o != 0);
-
-    return 0;
 }
