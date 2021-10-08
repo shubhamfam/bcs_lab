@@ -8,30 +8,9 @@ Output: Character Count
 */
 #include <stdio.h>
 #include <stdlib.h>
-#include "array_utils.h"
 
-int stringHas(char *str, char ch)
-{
-    while (*str)
-    {
-        if (*str == ch)
-            return 1;
-        *str++;
-    }
-    return 0;
-}
-
-int countOccurrences(char *str, char ch)
-{
-    int count = 0;
-    while (*str)
-    {
-        if (*str == ch)
-            count++;
-        *str++;
-    }
-    return count;
-}
+int stringHas(char *, char);
+int countOccurrences(char *, char);
 
 int main()
 {
@@ -57,4 +36,27 @@ int main()
     }
 
     return 0;
+}
+
+int stringHas(char *str, char ch)
+{
+    while (*str)
+    {
+        if (*str == ch)
+            return 1;
+        *str++;
+    }
+    return 0;
+}
+
+int countOccurrences(char *str, char ch)
+{
+    int count = 0;
+    while (*str)
+    {
+        if (*str == ch)
+            count++;
+        *str++;
+    }
+    return count;
 }

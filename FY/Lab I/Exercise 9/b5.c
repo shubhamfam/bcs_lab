@@ -2,23 +2,7 @@
 #include <stdio.h>
 #include "array_utils.h"
 #include <stdlib.h>
-
-int removeDuplicates(int *arr, int *newArray)
-{
-    int i = 0, j = 0;
-
-    while (arr[j])
-    {
-        if (!setHas(newArray, arr[j]))
-        {
-            newArray[i] = arr[j];
-            ++i;
-        }
-        ++j;
-    }
-    return i;
-}
-
+int removeDuplicates(int *, int *);
 int main()
 {
     int *arr, *newArray, n;
@@ -39,4 +23,20 @@ int main()
 
     
     return 0;
+}
+
+int removeDuplicates(int *arr, int *newArray)
+{
+    int i = 0, j = 0;
+
+    while (arr[j])
+    {
+        if (!setHas(newArray, arr[j]))
+        {
+            newArray[i] = arr[j];
+            ++i;
+        }
+        ++j;
+    }
+    return i;
 }

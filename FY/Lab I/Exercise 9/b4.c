@@ -1,12 +1,13 @@
 /*4. Write a program to find the union and intersection of the two sets of integers (store it in two
 arrays).*/
 #include <stdio.h>
+#include <stdlib.h>
 #include "array_utils.h"
 
-int setHas(const int *arr, int num)
-{
-    while (*arr)
-        if (num == *arr++)
+int setHas(int *arr, int num)
+{   int *p = arr;
+    while (*p)
+        if (num == *p++)
             return 1;
     return 0;
 }
@@ -32,7 +33,7 @@ int *uni(int *set1, int *set2)
 {
     int *u = (int *)malloc(10 * sizeof(int));
     int i = 0;
-
+    
     while (*set1)
     {
         u[i] = *set1;
@@ -46,7 +47,8 @@ int *uni(int *set1, int *set2)
         {
             u[i] = *set2;
             ++i;
-        }*set2++;
+        }
+        *set2++;
     }
 
     return u;
@@ -54,9 +56,10 @@ int *uni(int *set1, int *set2)
 
 void display_set(int *arr)
 {
-    while (*arr)
+    int *p = arr;
+    while (*p)
     {
-        printf("%d ", *arr++);
+        printf("%d ", *p++);
     }
 }
 

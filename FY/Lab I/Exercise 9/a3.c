@@ -3,17 +3,7 @@ the occurrences of the number in the array*/
 #include <stdio.h>
 #include "array_utils.h"
 
-int countOccurrences(int *arr, int n, int num)
-{
-    int count = 0;
-    for (int i = 0; i < n; i++)
-    {
-        if (arr[i] == num)
-            ++count;
-    }
-    return count;
-}
-
+int countOccurrences(int *, int, int);
 int main()
 {
     int *arr, n, num;
@@ -31,4 +21,15 @@ int main()
     printf("\nOccurences of %d in array: %d times\n", num, countOccurrences(arr, n, num));
 
     return 0;
+}
+
+int countOccurrences(int *arr, int n, int num)
+{
+    int count = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] == num)
+            ++count;
+    }
+    return count;
 }
